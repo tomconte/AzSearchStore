@@ -122,7 +122,7 @@ export namespace Store {
         filterClause: string,
     };
 
-    export type CheckboxDataType = "number" | "string" | "collection";
+    export type CheckboxDataType = "number" | "string" | "collection" | "collectionComplex";
 
     export type CheckboxFacet = {
         type: "CheckboxFacet"

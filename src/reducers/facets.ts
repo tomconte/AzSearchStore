@@ -249,10 +249,11 @@ function addCheckboxFacet(state: Store.Facets, action: AddCheckboxFacetAction): 
     switch (dataType) {
         case "number":
         case "collection":
+        case "collectionComplex":
         case "string":
             break;
         default:
-            throw new Error("dataType of CheckboxFacet must be 'number' | 'collection' | 'string'");
+            throw new Error("dataType of CheckboxFacet must be 'number' | 'collection' | 'collectionComplex' | 'string'");
     }
     const checkFacet: Store.CheckboxFacet = {
         type: "CheckboxFacet",
@@ -317,6 +318,10 @@ function buildCheckboxFilter(facet: Store.CheckboxFacet): string {
                 break;
             case "collection":
                 clause = `${facet.key}/any(t: t eq '${facet.values[selectedValue].value}')`;
+                break;
+            case "collectionComplex":
+                let splitKey = facet.key.split('/');
+                clause = `${splitKey[0]}/any(t: t/${splitKey[1]} eq '${facet.values[selectedValue].value}')`;
                 break;
             default:
                 clause = "";
