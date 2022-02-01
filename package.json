@@ -1,6 +1,6 @@
 {
   "name": "@tomconte/azsearchstore",
-  "version": "0.0.28",
+  "version": "0.0.29",
   "description": "redux based UI state management for applications consuming Azure Search",
   "repository": {
     "type": "git",
