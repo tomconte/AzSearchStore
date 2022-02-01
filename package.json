@@ -6,6 +6,9 @@
     "type": "git",
     "url": "https://github.com/tomconte/AzSearchStore.git"
   },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com"
+  },
   "module": "dist/AzSearchStore.js",
   "main": "dist/AzSearchStore.bundle.js",
   "files": [
